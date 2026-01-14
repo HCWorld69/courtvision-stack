@@ -1,0 +1,70 @@
+﻿project:
+  name: CourtVision Stack
+  league: NBA
+
+paths:
+  source_video: data/raw/videos/boston-celtics-new-york-knicks-game-1-q1-04.28-04.20.mp4
+  output_dir: outputs
+  assets_dir: assets
+  rosters: configs/rosters.yaml
+  sam2_repo: models/sam2/segment-anything-2-real-time
+  sam2_checkpoint: models/sam2/segment-anything-2-real-time/checkpoints/sam2.1_hiera_large.pt
+  sam2_config: models/sam2/segment-anything-2-real-time/configs/sam2.1/sam2.1_hiera_l.yaml
+  fonts_dir: assets/fonts
+
+models:
+  player_detection_id: basketball-player-detection-3-ycjdo/4
+  number_recognition_id: basketball-jersey-numbers-ocr/3
+  keypoint_detection_id: basketball-court-detection-2/14
+
+thresholds:
+  player_confidence: 0.4
+  player_iou: 0.9
+  keypoint_confidence: 0.3
+  keypoint_anchor_confidence: 0.5
+  mask_ios_threshold: 0.9
+  ocr_interval: 5
+
+validation:
+  number_consecutive: 3
+  team_consecutive: 1
+
+classes:
+  number_class_id: 2
+  player_class_ids: [3, 4, 5, 6, 7]
+
+shot_detection:
+  jump_shot_class_id: 5
+  layup_dunk_class_id: 6
+  ball_in_basket_class_id: 1
+  player_jump_shot_class_id: 5
+  frame_idx: 65
+
+teams:
+  names:
+    0: Boston Celtics
+    1: New York Knicks
+  colors:
+    Boston Celtics: "#007A33"
+    New York Knicks: "#006BB6"
+  palette:
+    - "#ffff00"
+    - "#ff9b00"
+    - "#ff66ff"
+    - "#3399ff"
+    - "#ff66b2"
+    - "#ff8080"
+    - "#b266ff"
+    - "#9999ff"
+    - "#66ffff"
+    - "#33ff99"
+    - "#66ff66"
+    - "#99ff00"
+
+clean_paths:
+  jump_sigma: 3.5
+  min_jump_dist: 0.6
+  max_jump_run: 18
+  pad_around_runs: 2
+  smooth_window: 9
+  smooth_poly: 2

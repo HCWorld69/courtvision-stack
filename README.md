@@ -1,10 +1,8 @@
 ﻿# CourtVision Stack: Basketball AI End-to-End Pipeline
 
-CourtVision Stack is a production-style project built from the Roboflow Colab notebook:
-https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/basketball-ai-how-to-detect-track-and-identify-basketball-players.ipynb
-
-It turns the notebook into a structured repo with configs, scripts, and modular code so a
-cloned copy can install dependencies, download assets, and run inference end to end.
+CourtVision Stack is a production-style project for end-to-end basketball analytics.
+It uses a structured repo with configs, scripts, and modular code so a cloned copy can
+install dependencies, download assets, and run inference end to end.
 
 ## What this pipeline does
 - Player detection with RF-DETR
@@ -30,8 +28,6 @@ courtvision-stack/
     processed/
   models/
     sam2/
-  notebooks/
-    basketball-ai-how-to-detect-track-and-identify-basketball-players.ipynb
   outputs/
     detections/
     tracks/
@@ -99,7 +95,6 @@ courtvision-stack/
 - `ffmpeg` is required for optional video compression; install it if needed.
 
 ## Credits
-- Original notebook: https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/basketball-ai-how-to-detect-track-and-identify-basketball-players.ipynb
 - SAM2: https://github.com/facebookresearch/sam2
 - Real-time SAM2: https://github.com/Gy920/segment-anything-2-real-time
 - Roboflow Sports: https://github.com/roboflow/sports
